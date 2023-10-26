@@ -79,10 +79,64 @@ def simulate_coin_experiment(n, n_exp):
     print(total/n_exp)
 
 
-# print(check(fill()))
-# print(average(fill_until_zero()))
-# print(get_price(int(input())))
-# print(get_variability(fill()))
-# print_pyramid(int(input()))
-# simulate_coin_experiment(50, 10000)
+get_triangle_area(input(), input())  # aufgabe 1a
 
+# aufgabe 1b
+'''
+Eine siwtch-case Anweisung kann man mit if-elif Anweisungen simulieren, indem man die erste if-Anweisung statt switch-Anweisung nutzt und
+die weiteren elif-Anweisungen statt case, das könnte so aussehen:
+input(letter)
+if (letter == 'a'): $Anweisung 1$
+elif (letter == 'b'): $Anweisung 2$
+elif (letter == 'c'): $Anweisung 3$
+...
+elif (letter == 'y'): $Anweisung 27$
+else: $Anweisung 28$
+'''
+
+# aufgabe 1c
+'''
+Bei einer while-Schleife muss der Zähler jedes Mal innerhalb der Schleife geändert werden, also die Schleife:
+for i in range(a, b, c) könnte man durch die Schleife ersetzen:
+	i = a
+	while i < b:
+	...
+	i += c
+'''
+
+print(check(fill()))  # aufgabe 1d
+print(average(fill_until_zero()))  # aufgabe 1e
+print(get_price(int(input())))  # aufgabe 2a
+
+# aufgabe 2b
+'''
+if $Bedingung$ then $Anweisung1$
+if $nicht Bedingung$ then $Anweisung2$ 
+
+Mit einem konkreten Beispiel:
+a = input()
+if a % 2 == 0 then print("gerade")
+if a % 2 != 0 then print("ungerade")
+
+Das heißt man muss die zweite Bedingung (oder die Gegenbedingung) auch ausdrücklich schreiben. Der Nachteil ist aber, dass
+dabei Vergleiche gemacht werden, die tatsächlich nicht nötig sind. 
+'''
+
+# aufgabe 2c
+'''
+Bei einer do-while Schleife wird eine Answeisung ausgeführt solange die nachfolgende Bedingung richtig ist.
+Da die Bedingung nachfolgend ist, wird die Anweisung mindestens einmal ausgeführt und erst dann wird überprüft, ob
+die Bedingung richtig ist.
+Beispiel in Python:
+$Anweisung$				
+while $Bedingung$:			
+	$Anweisung$ 
+
+input(a)
+a *= 2
+while a <= 100: a *=2
+'''
+
+print(get_variability(fill()))  # aufgabe 2d
+print_pyramid(int(input()))  # aufgabe 2e
+simulate_coin_experiment(50, 10000)  # aufgabe 3
