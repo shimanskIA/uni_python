@@ -1,0 +1,44 @@
+1b:
+foo(list(float/int), float/int) : bool
+Voraussetzung: die Liste enthält nur Zahlen
+Ergebnis: Der Wahrheitswert davon, dass die Zahl k nicht kleiner als alle Elemente der Liste ist, ist geliefert
+Effekt: Die Liste wird verändert, sie wird mit bool-schen Werten gefüllt
+"""
+Tests:
+bar([-3, 4, 5, 6, 7, 8], -4) == false
+bar([-3, 4, 5, 6, 7, 8], -2) == true
+bar([1, 1, 1, 1], 1) == true
+"""
+
+# bar(list, float/int) : bool
+# Voraussetzung: die Liste ist nicht leer
+# Ergebnis: Der Wahrheitswert davon, dass eine Zahl nicht kleiner als
+# alle Elemente in der Liste ist, ist geliefert
+# Effekt: keiner
+"""
+Tests:
+bar([-3, 4, 5, 6, 7, 8], -4) == false
+bar([-3, 4, 5, 6, 7, 8], -2) == true
+bar([1, 1, 1, 1], 1) == true
+"""
+
+In diesem Beispiel in der Funktion foo wird die als Parameter einzugebende Liste geändert. Das wird Nebeneffekt genannt,
+also etwas, was außer des Haupteffekts (die Aufgabe selber) im Zustand des Rechners geändert wird. So wird in diesem Fall außer
+der Lieferung des bool-schen Wertes auch die Liste beeinflusst. Das kann unerwünscht sein, weil es die ursprüngliche Liste nicht
+mehr gibt, obwohl man sie irgendwann noch brauchen könnte.  
+
+2c:
+Im zweiten Fall muss der Typ des Ausgabewertes (return-Wert) gleich None sein, weil kein Ergebnis geliefert wird.
+Also: 
+dna2rna_(list) : None und im zweiten Fall dna2rna(list) : list
+Der Vorteil des ersten Vorgangs ist, dass der Inhalt der Liste direkt geändert wird ohne Kopien zu erstellen, was sowhol 
+Speicher, als auch Resourcen vom Rechner (es wird weniger Operationen vorgenommen) spart. Zweiter Weg ist daher aufwendiger.
+Der Nachteil ist aber, dass man die ursprüngliche Liste nicht mehr vorhanden hat und die nicht mehr nutzen kann. Im zweiten
+Fall existieren die ursprüngliche Liste und die veränderte Liste gleichzeitig und man kann zu beiden greifen. In Abhängigkeit
+davon, was bei einer konkreten Aufgabe wichtiger ist: Performance oder Vorhandensein zweier Listen, kann man entscheiden,
+welcher Vorgang besser ist.
+
+2d:
+Ja, die Funktion hat Nebeneffekt, aus der Liste werden alle Elemente entfernt, die kleiner als k-kleinstes Element sind,
+also (1 bis k-1)-kleine Elemente werden entfernt. Um den Nebeneffekt zu vermeiden kann mann eine Kopie der Liste in die Funktion
+eingeben. 
