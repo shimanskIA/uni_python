@@ -1,6 +1,3 @@
-import random
-
-
 def get_histogram(word: str):
     hist = dict()
     length = len(word)
@@ -26,56 +23,26 @@ def inverse_dna(dna: str):
     return "".join(inversed_dna)
 
 
-def generate_dna(length):
-    dna = list()
-    for i in range(length):
-        rnd = random.random()
-        if rnd < 0.25: dna.append('A')
-        elif rnd < 0.5: dna.append('T')
-        elif rnd < 0.75: dna.append('G')
-        else: dna.append('C')
-    return "".join(dna)
-
-
-def get_similar_pos_number(dna1: str, dna2: str):
-    counter = 0
-    for i in range(len(dna1)):
-        if dna1[i] == dna2[i]: counter += 1
-    return counter
-
-
-def get_similar_freq_number(dna1: str, dna2: str):
-    hist1 = get_histogram(dna1)
-    hist2 = get_histogram(dna2)
-    counter = 0
-    for key in {'A', 'T', 'G', 'C'}:
-        if hist1.get(key) == hist2.get(key): counter += 1
-    return counter
-
-
-def start_game(length):
-    dna = generate_dna(length)
-    guessed_dna = str(input())
-    while dna != guessed_dna:
-        print(get_similar_pos_number(dna, guessed_dna))
-        print(get_similar_freq_number(dna, guessed_dna))
-        guessed_dna = str(input())
-    print(dna)
-
-
 # aufgabe 1a
 '''
-???
+1a - ...
+1b - hauptsächlich KdP5 (aber bisschen KdP2 auch)
+1c - KdP2
+1d - KdP2
+2a - KdP2
+2b - KdP2
+2c - KdP2
+2d - KdP2
 '''
 
 # aufgabe 1b
 '''
-Bei ganzen Zahlen kann es zu einem Überschlag kommen, wenn man veruscht eine größere Zahl darzustellen als das vom
+Bei ganzen Zahlen kann es zu einem Überschlag kommen, wenn man versucht eine größere Zahl darzustellen als das vom
 Datentyp erlaubt ist. In Python gibt es dieses Problem nicht, da können ganze Zahlen beliebig groß sein. Dafür sind aber
 alle Rechenoperationen in Python aufwendiger als in manchen hardwarenäheren Sprachen. Das passiert dadurch, dass in diesen
 Sprachen die ganzen Zahlen in Binärsystem dargestellt werden, also als eine Folge von 1 und 0. 
 Das Problem bei Gleitkommazahlen ist, dass es unendlich viele Gleitkommazahlen gibt, allerdings kann man nur 2^32 oder 2^64 
-Zahlen in einem Recher darstellen. Das führt dazu, das alle Gleitkommazahlen können nur angenähert dargestellt werden.
+Zahlen in einem Rechner darstellen. Das führt dazu, dass alle Gleitkommazahlen können nur angenähert dargestellt werden.
 Auch in Python gibts dieses Problem. 
 In Python könnte das mit folgendem Beispiel veranschaulicht werden:
 
@@ -102,12 +69,5 @@ a = 16
 dann kriegt man einen Fehler
 '''
 
-print(get_histogram(input()))  # aufgabe 1c
-print(inverse_dna(input()))  # aufgabe 1d
-dna1 = generate_dna(6)  # aufgabe 2a
-dna2 = generate_dna(6)  # aufgabe 2a
-print(dna1)
-print(dna2)
-print(get_similar_pos_number(dna1, dna2))  # aufgabe 2b
-print(get_similar_freq_number(dna1, dna2))  # aufgabe 2c
-start_game(6)  # aufgabe 2d
+print(get_histogram(input("Gib ein Wort oder ein Satz ein:\n")))  # aufgabe 1c
+print(inverse_dna(input("Gib eine DNA-Sequenz ein:\n")))  # aufgabe 1d
