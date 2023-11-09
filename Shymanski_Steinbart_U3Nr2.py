@@ -172,13 +172,3 @@ print(digit_sum(list("-0.123")))
 print(digit_sum(list("0")))
 print(digit_sum(list("1")))
 print(digit_sum(list("-1")))
-
-
-def foo(xs, k):
-    n = len(xs)
-    for i in range(n):
-        xs[i] = (xs[i] <= k)
-    erg = False
-    for b in xs:
-        erg = b or erg
-    return erg
