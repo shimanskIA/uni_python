@@ -1,6 +1,6 @@
-# dna2rna(list) : string
+# dna2rna(list) : list
 # Voraussetzung: keine
-# Ergebnis: Ein String, wo T durch U ersetzt sind, ist geliefert
+# Ergebnis: Eine Liste, wo T durch U ersetzt sind, ist geliefert
 # Effekt: keiner
 """
 Tests:
