@@ -38,8 +38,8 @@ def absteigend(n):
 # Ergebnis: Nichts ist geliefert
 # Effekt: Die dritte Liste enthält alle Elemente der ersten zwei Listen
 # und ist aufsteigend sortiert.
-# Auf dem Bildschirm wird jedes Mal das Endergebnis gezeigt und beim
-# letzten Mergeprozess werden einzelne Schritte auf dem Bildschirm
+# Auf dem Bildschirm wird jedes Mal das Endergebnis angezeigt und beim
+# letzten Mergeprozess werden auch einzelne Schritte auf dem Bildschirm
 # angezeigt
 '''
 Tests:
