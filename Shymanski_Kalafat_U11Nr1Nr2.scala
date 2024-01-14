@@ -102,6 +102,10 @@ class Cube(private var side: Double) extends Geom3D
   // Voraussetzung: keine
   // Ergebnis: Das Volumen vom Würfel ist geliefert
   // Effekt: keiner
+  /*
+  Tests befinden sich in der Test-Methode
+  ...
+   */
   def calculate_volume: Double =
     Math.pow(side, 3)
 
@@ -109,6 +113,10 @@ class Cube(private var side: Double) extends Geom3D
   // Voraussetzung: keine
   // Ergebnis: Der Oberflächeninhalt vom Würfel ist geliefert
   // Effekt: keiner
+  /*
+  Tests befinden sich in der Test-Methode
+  ...
+  */
   def calculate_surface_area: Double =
     6 * Math.pow(side, 2)
 }
@@ -123,6 +131,10 @@ class Cuboid(private var length: Double,
   // Voraussetzung: keine
   // Ergebnis: Das Volumen vom Quader ist geliefert
   // Effekt: keiner
+  /*
+  Tests befinden sich in der Test-Methode
+  ...
+  */
   def calculate_volume: Double =
     length * width * height
 
@@ -130,6 +142,10 @@ class Cuboid(private var length: Double,
   // Voraussetzung: keine
   // Ergebnis: Der Oberflächeninhalt vom Quader ist geliefert
   // Effekt: keiner
+  /*
+  Tests befinden sich in der Test-Methode
+  ...
+  */
   def calculate_surface_area: Double =
     2 * length * width + 2 * length * height + 2 * width * height
 }
@@ -142,6 +158,10 @@ class Sphere(private var radius: Double) extends Geom3D
   // Voraussetzung: keine
   // Ergebnis: Das Volumen von der Kugel ist geliefert
   // Effekt: keiner
+  /*
+  Tests befinden sich in der Test-Methode
+  ...
+  */
   def calculate_volume: Double =
     4/3 * Math.PI * Math.pow(radius, 3)
 
@@ -149,6 +169,10 @@ class Sphere(private var radius: Double) extends Geom3D
   // Voraussetzung: keine
   // Ergebnis: Der Oberflächeninhalt von der Kugel ist geliefert
   // Effekt: keiner
+  /*
+  Tests befinden sich in der Test-Methode
+  ...
+  */
   def calculate_surface_area: Double =
     4 * Math.PI * Math.pow(radius, 2)
 }
@@ -164,6 +188,10 @@ class RegularTetrahedron(private var side: Double) extends Geom3D
   // (ich habe mir gedacht für ein normales Tetraeder wäre es zu kompliziert
   // und Geometrie ist dabei kein Ziel)
   // Effekt: keiner
+  /*
+  Tests befinden sich in der Test-Methode
+  ...
+  */
   def calculate_volume: Double =
     Math.sqrt(3) / 12 * Math.pow(side, 3)
 
@@ -171,6 +199,10 @@ class RegularTetrahedron(private var side: Double) extends Geom3D
   // Voraussetzung: keine
   // Ergebnis: Der Oberflächeninhalt vom gleichschenkligen Tetraeder ist geliefert
   // Effekt: keiner
+  /*
+  Tests befinden sich in der Test-Methode
+  ...
+  */
   def calculate_surface_area: Double =
     3 * Math.sqrt(3) * Math.pow(side, 2) / 2
 }
@@ -322,6 +354,10 @@ sieht.
 // Effekt: es wird ein Zahlenspiel durchgeführt, bei dem der Nutzer eine Zahl
 // zwischen 1 und 100 raten soll, alle Schritte des Spiels werden auf dem Bildschirm
 // angezeigt
+/*
+Zum testen muss man das Spiel starten und spielen
+...
+*/
 
 def play_guess_number_game(): Unit = {
   var number: Int = scala.util.Random.between(1, 100)
@@ -362,6 +398,10 @@ class Car(private val manufacturer: String,
   // Effekt: der Kilometerstand vom Auto wird um die Strecke vergrößert.
   // Falls der neue Kilometerstand 1000 km überschreitet, wird das Auto als
   // benutzt angesehen und is_new wird auf false gestellt
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   def drive(distance: Int): Unit =
     if (distance > 0)
       mileage += distance
@@ -371,6 +411,10 @@ class Car(private val manufacturer: String,
   // Voraussetzung: keine
   // Ergebnis: der geschätzte Preis vom Auto ist geliefert
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   def estimate_price: Double =
     var new_price: Double = 0
     manufacturer match
@@ -387,6 +431,10 @@ class Car(private val manufacturer: String,
   // Voraussetzung: keine
   // Ergebnis: ein String mit dem Info übers Auto ist geliefert
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   def get_info: String =
     manufacturer
       + " " + model
@@ -400,6 +448,10 @@ class Car(private val manufacturer: String,
   // Ergebnis: Nichts ist geliefert
   // Effekt: das Auto geht kaputt und is_new wird somit auf false
   // gestellt
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   def break(): Unit =
     is_new = false
 
@@ -407,6 +459,10 @@ class Car(private val manufacturer: String,
   // Voraussetzung: keine
   // Ergebnis: die Schildnummer vom Auto ist geliefert
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   def get_plate_number: Int = plate_number
 }
 
@@ -443,6 +499,10 @@ class SportCar(manufacturer: String,
   // Voraussetzung: keine
   // Ergebnis: ein String mit dem Info übers Sportauto ist geliefert
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   override def get_info: String =
     super.get_info + " The maximal speed is " + maximal_speed + "km/h"
 
@@ -450,6 +510,10 @@ class SportCar(manufacturer: String,
   // Voraussetzung: keine
   // Ergebnis: der geschätzte Preis vom Sportauto ist geliefert
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   override def estimate_price: Double =
     var demo_price: Double = super.estimate_price * Math.pow(1.01, maximal_speed - 180)
     if (has_been_pimped)
@@ -462,6 +526,10 @@ class SportCar(manufacturer: String,
   // Ergebnis: Nicht ist geliefert
   // Effekt: Das Sportauto wird 'getunet', die maximale Geschwindigkeit wird
   // vergrößert und has_been_pimped Flag wird auf true gestellt
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   def pimp_my_ride(extra_kmh: Int): Unit =
     if (extra_kmh > 0)
       maximal_speed += extra_kmh
@@ -472,6 +540,10 @@ class SportCar(manufacturer: String,
   // Ergebnis: der Wahrheitswert davon ist geliefert, dass das Sportauto
   // 'getunet' wurde
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   def get_has_been_pimped: Boolean = has_been_pimped
 
 }
@@ -492,6 +564,10 @@ class Minivan(manufacturer: String,
   // Voraussetzung: keine
   // Ergebnis: ein String mit dem Info übers Minivan ist geliefert
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   override def get_info: String =
     super.get_info + " The vehicle can carry " + passenger_amount + " persons"
 
@@ -499,6 +575,10 @@ class Minivan(manufacturer: String,
   // Voraussetzung: keine
   // Ergebnis: der geschätzte Preis vom Minivan ist geliefert
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   override def estimate_price: Double =
     super.estimate_price * Math.pow(1.05, passenger_amount - 3)
 }
@@ -519,6 +599,10 @@ class Truck(manufacturer: String,
   // Voraussetzung: keine
   // Ergebnis: ein String mit dem Info über den LKW ist geliefert
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   override def get_info: String =
     super.get_info + " The vehicle can carry " + load_capacity + " kilogramms"
 
@@ -526,6 +610,10 @@ class Truck(manufacturer: String,
   // Voraussetzung: keine
   // Ergebnis: der geschätzte Preis vom LKW ist geliefert
   // Effekt: keiner
+  /*
+    Tests befinden sich in der Test-Methode
+    ...
+     */
   override def estimate_price: Double =
     super.estimate_price * Math.pow(1.0001, load_capacity - 1500)
 }
