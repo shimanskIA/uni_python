@@ -71,7 +71,7 @@ def run_examples(): Unit =
 
 /*
 Aufgabe 1b
-Im PDF-Datei ...
+In der PDF-Datei ...
  */
 
 /*
@@ -307,7 +307,7 @@ def geom3Demo(): Unit = {
 
 /*
 Aufgabe 1d
-Das Klassendiagramm ist im PDF-Datei ...
+Das Klassendiagramm ist in der PDF-Datei ...
 
 md.printMe() // "Read it!"
 Der statische Typ von md ist State, aber der dynamische Typ ist
